@@ -87,8 +87,12 @@
                                 <rect key="frame" x="0.0" y="83" width="320" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_form" id="5kS-fN-aHC">
+                                <rect key="frame" x="0.0" y="166" width="320" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="uhI-MZ-rTe">
-                                <rect key="frame" x="0.0" y="412" width="320" height="104"/>
+                                <rect key="frame" x="0.0" y="274" width="320" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="InU-FW-7UZ">
@@ -101,10 +105,6 @@
                                     <action selector="pressBackButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="Yo5-oq-GNp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_form" id="5kS-fN-aHC">
-                                <rect key="frame" x="0.0" y="166" width="320" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="XQf-Jg-DMd">
                                 <rect key="frame" x="22" y="179" width="262" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,14 +118,13 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ds-yF-zPs">
-                                <rect key="frame" x="16" y="422" width="288" height="56"/>
+                                <rect key="frame" x="16" y="287" width="288" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pressSignInButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="CNP-Zg-suv"/>
-                                    <segue destination="gXr-09-zlv" kind="modal" identifier="signInSegue" id="wHn-bt-xhX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,6 +137,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="XQf-Jg-DMd" id="PtY-QR-sCC"/>
                         <outlet property="passwordTextField" destination="TqC-ob-1oV" id="XhX-bP-AFd"/>
+                        <segue destination="gXr-09-zlv" kind="modal" identifier="signInSegue" id="VbP-D8-ess"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN8-hl-DUw" userLabel="First Responder" sceneMemberID="firstResponder"/>

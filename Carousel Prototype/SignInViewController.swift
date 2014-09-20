@@ -18,12 +18,18 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
     
     @IBAction func pressSignInButton(sender: UIButton) {
         if emailTextField.text == "hi@bjornrostad.no" && passwordTextField.text == "login" {
+            self.performSegueWithIdentifier("signInSegue", sender: self)
             
         } else if emailTextField.text == "" || passwordTextField.text == "" {
             var alertView = UIAlertView(title: "Email Required", message: "Please enter your email address", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
             
             // after press ok, set cursor to the email or password field
+        }
+        else {
+            var alertView = UIAlertView(title: "Incorrect", message: "Please enter correct email and password", delegate: self, cancelButtonTitle: "OK")
+            
+            alertView.show()
         }
     }
     
