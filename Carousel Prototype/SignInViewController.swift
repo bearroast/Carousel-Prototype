@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController, UIAlertViewDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func pressBackButton(sender: UIButton) {
@@ -17,6 +18,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func pressSignInButton(sender: UIButton) {
+        
         if emailTextField.text == "hi@bjornrostad.no" && passwordTextField.text == "login" {
             self.performSegueWithIdentifier("signInSegue", sender: self)
             
@@ -28,14 +30,45 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
         }
         else {
             var alertView = UIAlertView(title: "Incorrect", message: "Please enter correct email and password", delegate: self, cancelButtonTitle: "OK")
-            
             alertView.show()
         }
     }
     
+    func keyboardWillShow(notification:NSNotification!) {
+        
+        self.scrollView.contentOffset.y = 130
+        
+    }
+    
+    func keyBoardWillHide(notification:NSNotification!) {
+        self.scrollView.contentOffset.y = 0
+    }
+    
+//    func keyboardWillHide(notification:NSNotification!) {
+//        var userInfo = notification.userInfo!
+//        
+//        // Get the keyboard height and width from the notification
+//        // Size varies depending on OS, language, orientation
+//        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+//        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+//        var animationDuration = durationValue.doubleValue
+//        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+//        var animationCurve = curveValue.integerValue
+//        
+//        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+//
+//            self.scrollView.contentOffset.y = 140
+//            
+//            
+//            }, completion: nil)
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         
         

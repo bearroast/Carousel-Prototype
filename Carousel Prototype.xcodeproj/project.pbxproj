@@ -15,6 +15,7 @@
 		400F3AE219CDDB4400DA357C /* Carousel_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F3AE119CDDB4400DA357C /* Carousel_PrototypeTests.swift */; };
 		400F3AEC19CDDD2B00DA357C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */; };
 		40244F6419CDF32B00466129 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40244F6319CDF32B00466129 /* SignInViewController.swift */; };
+		40244F6619CE10BD00466129 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40244F6519CE10BD00466129 /* TutorialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		400F3AE119CDDB4400DA357C /* Carousel_PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel_PrototypeTests.swift; sourceTree = "<group>"; };
 		400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		40244F6319CDF32B00466129 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		40244F6519CE10BD00466129 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		400F3AED19CDDD3100DA357C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				40244F6519CE10BD00466129 /* TutorialViewController.swift */,
 				40244F6319CDF32B00466129 /* SignInViewController.swift */,
 				400F3ACD19CDDB4400DA357C /* ViewController.swift */,
 				400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */,
@@ -228,6 +231,7 @@
 			files = (
 				40244F6419CDF32B00466129 /* SignInViewController.swift in Sources */,
 				400F3AEC19CDDD2B00DA357C /* IntroViewController.swift in Sources */,
+				40244F6619CE10BD00466129 /* TutorialViewController.swift in Sources */,
 				400F3ACE19CDDB4400DA357C /* ViewController.swift in Sources */,
 				400F3ACC19CDDB4400DA357C /* AppDelegate.swift in Sources */,
 			);
