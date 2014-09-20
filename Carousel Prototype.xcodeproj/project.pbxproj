@@ -13,6 +13,8 @@
 		400F3AD319CDDB4400DA357C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F3AD219CDDB4400DA357C /* Images.xcassets */; };
 		400F3AD619CDDB4400DA357C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400F3AD419CDDB4400DA357C /* LaunchScreen.xib */; };
 		400F3AE219CDDB4400DA357C /* Carousel_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F3AE119CDDB4400DA357C /* Carousel_PrototypeTests.swift */; };
+		400F3AEC19CDDD2B00DA357C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */; };
+		40244F6419CDF32B00466129 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40244F6319CDF32B00466129 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		400F3ADB19CDDB4400DA357C /* Carousel PrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Carousel PrototypeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		400F3AE019CDDB4400DA357C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		400F3AE119CDDB4400DA357C /* Carousel_PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel_PrototypeTests.swift; sourceTree = "<group>"; };
+		400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		40244F6319CDF32B00466129 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				400F3ACB19CDDB4400DA357C /* AppDelegate.swift */,
-				400F3ACD19CDDB4400DA357C /* ViewController.swift */,
 				400F3ACF19CDDB4400DA357C /* Main.storyboard */,
+				400F3AED19CDDD3100DA357C /* ViewControllers */,
 				400F3AD219CDDB4400DA357C /* Images.xcassets */,
 				400F3AD419CDDB4400DA357C /* LaunchScreen.xib */,
 				400F3AC919CDDB4400DA357C /* Supporting Files */,
@@ -110,6 +114,16 @@
 				400F3AE019CDDB4400DA357C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		400F3AED19CDDD3100DA357C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				40244F6319CDF32B00466129 /* SignInViewController.swift */,
+				400F3ACD19CDDB4400DA357C /* ViewController.swift */,
+				400F3AEB19CDDD2B00DA357C /* IntroViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40244F6419CDF32B00466129 /* SignInViewController.swift in Sources */,
+				400F3AEC19CDDD2B00DA357C /* IntroViewController.swift in Sources */,
 				400F3ACE19CDDB4400DA357C /* ViewController.swift in Sources */,
 				400F3ACC19CDDB4400DA357C /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +421,7 @@
 				400F3AE719CDDB4400DA357C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		400F3AE819CDDB4400DA357C /* Build configuration list for PBXNativeTarget "Carousel PrototypeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +430,7 @@
 				400F3AEA19CDDB4400DA357C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
