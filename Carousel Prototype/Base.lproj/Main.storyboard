@@ -125,6 +125,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressSignInButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="CNP-Zg-suv"/>
+                                    <segue destination="gXr-09-zlv" kind="modal" identifier="signInSegue" id="wHn-bt-xhX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,10 +135,38 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="536"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="XQf-Jg-DMd" id="PtY-QR-sCC"/>
+                        <outlet property="passwordTextField" destination="TqC-ob-1oV" id="XhX-bP-AFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN8-hl-DUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1091" y="359"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="op3-Rd-1nP">
+            <objects>
+                <viewController id="gXr-09-zlv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8i6-MA-MVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome1" id="4to-qp-vSf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="naK-Y4-kcE">
+                                <rect key="frame" x="141" y="517" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQf-xC-qL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="359"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9IA-qA-dKy">
@@ -170,6 +199,7 @@
         <image name="login_form" width="320" height="113"/>
         <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
+        <image name="welcome1" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
