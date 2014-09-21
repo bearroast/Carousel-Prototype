@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="gXr-09-zlv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ntH-YS-UqI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TpG-hD-vqw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="TpG-hD-vqw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -20,24 +20,28 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile1" id="iKB-TN-dxg">
+                                        <rect key="frame" x="46" y="744" width="153" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile2" id="5ta-u2-Z4h">
-                                        <rect key="frame" x="24" y="462" width="76" height="75"/>
+                                        <rect key="frame" x="201" y="744" width="76" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile3" id="a2n-O3-Klt">
-                                        <rect key="frame" x="201" y="461" width="76" height="76"/>
+                                        <rect key="frame" x="201" y="820" width="76" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile4" id="ZYj-VV-EWm">
-                                        <rect key="frame" x="201" y="377" width="76" height="76"/>
+                                        <rect key="frame" x="46" y="898" width="76" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile5" id="PRV-Jh-Dfa">
-                                        <rect key="frame" x="201" y="294" width="76" height="75"/>
+                                        <rect key="frame" x="123" y="898" width="76" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile6" id="a76-IU-31A">
-                                        <rect key="frame" x="117" y="462" width="76" height="75"/>
+                                        <rect key="frame" x="201" y="898" width="76" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LBi-uF-0RB">
@@ -50,10 +54,6 @@
                                             <segue destination="h7V-QL-Fof" kind="push" id="c0R-w2-5TG"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile1" id="iKB-TN-dxg">
-                                        <rect key="frame" x="31" y="301" width="153" height="152"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -64,6 +64,12 @@
                     <size key="freeformSize" width="320" height="1136"/>
                     <connections>
                         <outlet property="introImageView" destination="RIH-6e-Ben" id="XP3-jJ-jeK"/>
+                        <outlet property="introTile1ImageView" destination="iKB-TN-dxg" id="fEP-JO-iHc"/>
+                        <outlet property="introTile2ImageView" destination="5ta-u2-Z4h" id="dhX-Se-KHm"/>
+                        <outlet property="introTile3ImageView" destination="a2n-O3-Klt" id="Xxf-Wj-Viv"/>
+                        <outlet property="introTile4ImageView" destination="ZYj-VV-EWm" id="xsV-T9-7OM"/>
+                        <outlet property="introTile5ImageView" destination="PRV-Jh-Dfa" id="lcu-Dm-QEb"/>
+                        <outlet property="introTile6ImageView" destination="a76-IU-31A" id="cDq-xD-Mi8"/>
                         <outlet property="scrollView" destination="TpG-hD-vqw" id="a30-mr-ZCF"/>
                     </connections>
                 </viewController>
