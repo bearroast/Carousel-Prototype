@@ -20,6 +20,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var introTile6ImageView: UIImageView!
     
     
+
+//  Going to put the tiles in a variable
+//  var tiles = [introTile1ImageView, introTile2ImageView, introTile3ImageView, introTile4ImageView, introTile5ImageView, introTile6ImageView]
     var yOffsets : [Float] = [-285, -240, -415, -408, -480, -500]
     var xOffsets : [Float] = [-30, 75, -66, 10, -200, -15]
     var scales : [Float] = [1, 1.65, 1.7, 1.6, 1.65, 1.65]
@@ -30,13 +33,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         return value * ratio + r2Min - r1Min * ratio
     }
 
-//    started on a method for moving the photos using convertValue and arrays
-//    func moveImageView(value : Float) {
-//        var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -30, r2Max: 0)
-//        var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -285, r2Max: 0)
-//        var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: 1, r2Max: 1)
-//        var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -10, r2Max: 0)
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,16 +46,60 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         var offset = Float(scrollView.contentOffset.y)
         
         println("content offset: \(scrollView.contentOffset.y)")
-        println("calling yOffset: \(yOffsets[0])")
         
-        var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[0], r2Max: 0)
-        var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[0], r2Max: 0)
-        var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[0], r2Max: 1)
-        var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[0], r2Max: 0)
+        var txTile1 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[0], r2Max: 0)
+        var tyTile1 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[0], r2Max: 0)
+        var scaleTile1 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[0], r2Max: 1)
+        var rotationTile1 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[0], r2Max: 0)
+
+        var txTile2 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[1], r2Max: 0)
+        var tyTile2 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[1], r2Max: 0)
+        var scaleTile2 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[1], r2Max: 1)
+        var rotationTile2 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[1], r2Max: 0)
+
+        var txTile3 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[2], r2Max: 0)
+        var tyTile3 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[2], r2Max: 0)
+        var scaleTile3 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[2], r2Max: 1)
+        var rotationTile3 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[2], r2Max: 0)
+
+        var txTile4 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[3], r2Max: 0)
+        var tyTile4 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[3], r2Max: 0)
+        var scaleTile4 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[3], r2Max: 1)
+        var rotationTile4 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[3], r2Max: 0)
+
+        var txTile5 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[4], r2Max: 0)
+        var tyTile5 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[4], r2Max: 0)
+        var scaleTile5 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[4], r2Max: 1)
+        var rotationTile5 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[4], r2Max: 0)
+
+        var txTile6 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[5], r2Max: 0)
+        var tyTile6 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[5], r2Max: 0)
+        var scaleTile6 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[5], r2Max: 1)
+        var rotationTile6 = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[5], r2Max: 0)
         
-        introTile1ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(tx), CGFloat(ty))
-        introTile1ImageView.transform = CGAffineTransformScale(introTile1ImageView.transform, CGFloat(scale), CGFloat(scale))
-        introTile1ImageView.transform = CGAffineTransformRotate(introTile1ImageView.transform, CGFloat(Double(rotation) * M_PI / 180))
+        introTile1ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile1), CGFloat(tyTile1))
+        introTile1ImageView.transform = CGAffineTransformScale(introTile1ImageView.transform, CGFloat(scaleTile1), CGFloat(scaleTile1))
+        introTile1ImageView.transform = CGAffineTransformRotate(introTile1ImageView.transform, CGFloat(Double(rotationTile1) * M_PI / 180))
+
+        introTile2ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile2), CGFloat(tyTile2))
+        introTile2ImageView.transform = CGAffineTransformScale(introTile2ImageView.transform, CGFloat(scaleTile2), CGFloat(scaleTile2))
+        introTile2ImageView.transform = CGAffineTransformRotate(introTile2ImageView.transform, CGFloat(Double(rotationTile2) * M_PI / 180))
+
+        introTile3ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile3), CGFloat(tyTile3))
+        introTile3ImageView.transform = CGAffineTransformScale(introTile3ImageView.transform, CGFloat(scaleTile3), CGFloat(scaleTile3))
+        introTile3ImageView.transform = CGAffineTransformRotate(introTile3ImageView.transform, CGFloat(Double(rotationTile3) * M_PI / 180))
+
+        introTile4ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile4), CGFloat(tyTile4))
+        introTile4ImageView.transform = CGAffineTransformScale(introTile4ImageView.transform, CGFloat(scaleTile4), CGFloat(scaleTile4))
+        introTile4ImageView.transform = CGAffineTransformRotate(introTile4ImageView.transform, CGFloat(Double(rotationTile3) * M_PI / 180))
+
+        introTile5ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile5), CGFloat(tyTile5))
+        introTile5ImageView.transform = CGAffineTransformScale(introTile5ImageView.transform, CGFloat(scaleTile5), CGFloat(scaleTile5))
+        introTile5ImageView.transform = CGAffineTransformRotate(introTile5ImageView.transform, CGFloat(Double(rotationTile5) * M_PI / 180))
+
+        introTile6ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile6), CGFloat(tyTile6))
+        introTile6ImageView.transform = CGAffineTransformScale(introTile5ImageView.transform, CGFloat(scaleTile6), CGFloat(scaleTile6))
+        introTile6ImageView.transform = CGAffineTransformRotate(introTile5ImageView.transform, CGFloat(Double(rotationTile6) * M_PI / 180))
 
     }
     
