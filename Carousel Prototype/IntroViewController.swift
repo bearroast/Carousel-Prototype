@@ -20,11 +20,8 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var introTile6ImageView: UIImageView!
     
     
-
-//  Going to put the tiles in a variable
-//  var tiles = [introTile1ImageView, introTile2ImageView, introTile3ImageView, introTile4ImageView, introTile5ImageView, introTile6ImageView]
-    var yOffsets : [Float] = [-285, -240, -415, -408, -480, -500]
-    var xOffsets : [Float] = [-30, 75, -66, 10, -200, -15]
+    var yOffsets : [Float] = [-295, -340, -315, -488, -410, -280]
+    var xOffsets : [Float] = [-50, 75, -66, 10, 100, -15]
     var scales : [Float] = [1, 1.65, 1.7, 1.6, 1.65, 1.65]
     var rotations : [Float] = [-10, -10, 10, 10, 10, -10]
     
@@ -32,8 +29,6 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         var ratio = (r2Max - r2Min) / (r1Max - r1Min)
         return value * ratio + r2Min - r1Min * ratio
     }
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +86,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
 
         introTile4ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile4), CGFloat(tyTile4))
         introTile4ImageView.transform = CGAffineTransformScale(introTile4ImageView.transform, CGFloat(scaleTile4), CGFloat(scaleTile4))
-        introTile4ImageView.transform = CGAffineTransformRotate(introTile4ImageView.transform, CGFloat(Double(rotationTile3) * M_PI / 180))
+        introTile4ImageView.transform = CGAffineTransformRotate(introTile4ImageView.transform, CGFloat(Double(rotationTile4) * M_PI / 180))
 
         introTile5ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(txTile5), CGFloat(tyTile5))
         introTile5ImageView.transform = CGAffineTransformScale(introTile5ImageView.transform, CGFloat(scaleTile5), CGFloat(scaleTile5))
