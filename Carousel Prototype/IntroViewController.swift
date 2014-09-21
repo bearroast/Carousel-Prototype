@@ -29,6 +29,14 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         var ratio = (r2Max - r2Min) / (r1Max - r1Min)
         return value * ratio + r2Min - r1Min * ratio
     }
+
+//    started on a method for moving the photos using convertValue and arrays
+//    func moveImageView(value : Float) {
+//        var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -30, r2Max: 0)
+//        var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -285, r2Max: 0)
+//        var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: 1, r2Max: 1)
+//        var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -10, r2Max: 0)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +51,15 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         println("content offset: \(scrollView.contentOffset.y)")
         println("calling yOffset: \(yOffsets[0])")
         
-        var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -30, r2Max: 0)
-        var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -285, r2Max: 0)
-        var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: 1, r2Max: 1)
-        var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: -10, r2Max: 0)
+        var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[0], r2Max: 0)
+        var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[0], r2Max: 0)
+        var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[0], r2Max: 1)
+        var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[0], r2Max: 0)
         
         introTile1ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(tx), CGFloat(ty))
         introTile1ImageView.transform = CGAffineTransformScale(introTile1ImageView.transform, CGFloat(scale), CGFloat(scale))
         introTile1ImageView.transform = CGAffineTransformRotate(introTile1ImageView.transform, CGFloat(Double(rotation) * M_PI / 180))
+
     }
     
     override func didReceiveMemoryWarning() {
