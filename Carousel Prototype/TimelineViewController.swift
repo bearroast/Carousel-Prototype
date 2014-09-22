@@ -12,6 +12,8 @@ class TimelineViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
+    @IBAction func onConversationsButton(sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
