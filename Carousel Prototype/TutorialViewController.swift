@@ -29,15 +29,26 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         
         // Set the backup button to only be visible on the last page
         if page == 3 {
-            UIView.animateWithDuration(0.3) {
+            UIView.animateWithDuration(0.4) {
                 self.backupButtonImageView.alpha = 1
                 self.backupSwitch.alpha = 1
             }
         }
         else {
-            UIView.animateWithDuration(0.3) {
+            UIView.animateWithDuration(0.4) {
                 self.backupButtonImageView.alpha = 0
                 self.backupSwitch.alpha = 0
+            }
+        }
+        
+        if page == 3 {
+            UIView.animateWithDuration(0.2) {
+                self.pageControl.alpha = 0
+            }
+        }
+        else {
+            UIView.animateWithDuration(0.2) {
+                self.pageControl.alpha = 1
             }
         }
     }

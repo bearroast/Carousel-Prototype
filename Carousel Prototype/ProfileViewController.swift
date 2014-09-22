@@ -15,6 +15,13 @@ class ProfileViewController: UIViewController {
     @IBAction func onPressClose(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+   
+    @IBAction func onPressSignOut(sender: UIButton) {
+        self.performSegueWithIdentifier("signOutSegue", sender: self)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
