@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
         delay(2, closure: { () -> () in
             
             // Great success
-            if self.emailTextField.text == "hi" && self.passwordTextField.text == "login" {
+            if self.emailTextField.text == "hi@bjornrostad.no" && self.passwordTextField.text == "pw" {
                 
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
