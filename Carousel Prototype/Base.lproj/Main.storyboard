@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h7V-QL-Fof">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ntH-YS-UqI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -76,6 +76,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="694" y="359"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="ke0-t3-ll6">
+            <objects>
+                <viewController id="2MN-X6-dHH" customClass="CreateAccountViewController" customModule="Carousel_Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q0a-MJ-hwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="PXa-BA-3TR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_text" id="U6s-Xf-SfG">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_form" id="Uqk-t7-VDf">
+                                        <rect key="frame" x="0.0" y="198" width="320" height="192"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_button" id="HIy-iT-94b">
+                                        <rect key="frame" x="0.0" y="410" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terms_text" id="uJL-Wn-k5u">
+                                        <rect key="frame" x="0.0" y="485" width="320" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rQR-E0-gNl">
+                                        <rect key="frame" x="268" y="491" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="check_box">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="check_box_selected"/>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_nav" id="xiM-ZI-ntV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exq-fy-vyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="54"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="5qk-6P-3KP">
@@ -180,7 +230,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1138" y="359"/>
+            <point key="canvasLocation" x="1123" y="659"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="op3-Rd-1nP">
@@ -441,7 +491,12 @@
     </scenes>
     <resources>
         <image name="backup_button" width="320" height="97"/>
+        <image name="check_box" width="20" height="20"/>
+        <image name="check_box_selected" width="20" height="20"/>
         <image name="conversations" width="320" height="568"/>
+        <image name="create_button" width="320" height="57"/>
+        <image name="create_form" width="320" height="192"/>
+        <image name="create_nav" width="320" height="66"/>
         <image name="create_text" width="320" height="63"/>
         <image name="feed" width="320" height="1564"/>
         <image name="feed_nav" width="320" height="65"/>
@@ -458,6 +513,7 @@
         <image name="settings_nav" width="320" height="64"/>
         <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
+        <image name="terms_text" width="320" height="33"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
         <image name="welcome3" width="320" height="568"/>
