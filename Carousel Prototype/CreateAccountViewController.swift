@@ -10,6 +10,20 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var createButtonView: UIView!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBAction func onBackButton(sender: UIButton) {  navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func pressCreate(sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,5 +32,8 @@ class CreateAccountViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
 
 }

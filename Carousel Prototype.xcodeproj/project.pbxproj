@@ -20,6 +20,7 @@
 		40BEE48919CFE3C20056342A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48819CFE3C20056342A /* ConversationsViewController.swift */; };
 		40BEE48B19CFE5BF0056342A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */; };
 		40BEE48D19CFF6C80056342A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48C19CFF6C80056342A /* CreateAccountViewController.swift */; };
+		40BEE48F19D078BB0056342A /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48E19D078BB0056342A /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		40BEE48819CFE3C20056342A /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		40BEE48C19CFF6C80056342A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		40BEE48E19D078BB0056342A /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		400F3AED19CDDD3100DA357C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				40BEE48E19D078BB0056342A /* TermsViewController.swift */,
 				40BEE48C19CFF6C80056342A /* CreateAccountViewController.swift */,
 				40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */,
 				40BEE48819CFE3C20056342A /* ConversationsViewController.swift */,
@@ -245,6 +248,7 @@
 				400F3AEC19CDDD2B00DA357C /* IntroViewController.swift in Sources */,
 				40BEE48919CFE3C20056342A /* ConversationsViewController.swift in Sources */,
 				40244F6619CE10BD00466129 /* TutorialViewController.swift in Sources */,
+				40BEE48F19D078BB0056342A /* TermsViewController.swift in Sources */,
 				400F3ACE19CDDB4400DA357C /* ViewController.swift in Sources */,
 				400F3ACC19CDDB4400DA357C /* AppDelegate.swift in Sources */,
 				40BEE48D19CFF6C80056342A /* CreateAccountViewController.swift in Sources */,

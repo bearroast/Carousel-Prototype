@@ -96,8 +96,8 @@ class SignInViewController: UIViewController {
         UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
             
             // Position when keyboard is active
-            self.scrollView.contentOffset.y = 130
-            self.signInButtonView.center.y = 385
+            self.scrollView.contentOffset.y = 80
+            self.signInButtonView.center.y = 345
             }, completion: nil)
     }
     
