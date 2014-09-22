@@ -1,5 +1,5 @@
 //
-//  TimelineViewController.swift
+//  ProfileViewController.swift
 //  Carousel Prototype
 //
 //  Created by Bjørn Eivind Rostad on 9/21/14.
@@ -8,19 +8,17 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var feedImageView: UIImageView!
-    @IBAction func onConversationsButton(sender: UIButton) {
+    @IBOutlet weak var settingsImageView: UIImageView!
+    @IBAction func onPressClose(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func onProfileButton(sender: UIButton) {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.contentSize = feedImageView.image!.size
+
+        scrollView.contentSize = settingsImageView.image!.size
         // Do any additional setup after loading the view.
     }
 
@@ -28,5 +26,6 @@ class TimelineViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+
 }

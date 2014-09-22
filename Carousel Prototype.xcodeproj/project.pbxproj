@@ -18,6 +18,7 @@
 		40244F6619CE10BD00466129 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40244F6519CE10BD00466129 /* TutorialViewController.swift */; };
 		40BEE48719CFDC150056342A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48619CFDC150056342A /* TimelineViewController.swift */; };
 		40BEE48919CFE3C20056342A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48819CFE3C20056342A /* ConversationsViewController.swift */; };
+		40BEE48B19CFE5BF0056342A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		40244F6519CE10BD00466129 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		40BEE48619CFDC150056342A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		40BEE48819CFE3C20056342A /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Carousel Prototype/ProfileViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		400F3ABD19CDDB4400DA357C = {
 			isa = PBXGroup;
 			children = (
+				40BEE48A19CFE5BF0056342A /* ProfileViewController.swift */,
 				400F3AC819CDDB4400DA357C /* Carousel Prototype */,
 				400F3ADE19CDDB4400DA357C /* Carousel PrototypeTests */,
 				400F3AC719CDDB4400DA357C /* Products */,
@@ -241,6 +244,7 @@
 				40244F6619CE10BD00466129 /* TutorialViewController.swift in Sources */,
 				400F3ACE19CDDB4400DA357C /* ViewController.swift in Sources */,
 				400F3ACC19CDDB4400DA357C /* AppDelegate.swift in Sources */,
+				40BEE48B19CFE5BF0056342A /* ProfileViewController.swift in Sources */,
 				40BEE48719CFDC150056342A /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
