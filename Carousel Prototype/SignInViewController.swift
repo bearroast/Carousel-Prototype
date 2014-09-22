@@ -16,11 +16,13 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButtonView: UIImageView!
 
+    @IBAction func onBackButton(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
+    }
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    
-    // navigationController!.popViewControllerAnimated(true)
+
     
     
 
