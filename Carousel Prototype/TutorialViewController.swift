@@ -13,9 +13,10 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var backupButtonImageView: UIImageView!
     @IBOutlet weak var backupSwitch: UISwitch!
-    @IBAction func onBackUpButton(sender: UIButton) {
-        
+    @IBAction func onContinueButton(sender: UIButton) {
+        self.performSegueWithIdentifier("continueSegue", sender: self)
     }
+
 
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
