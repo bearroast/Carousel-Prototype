@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ntH-YS-UqI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h7V-QL-Fof">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -109,20 +109,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ds-yF-zPs">
-                                        <rect key="frame" x="16" y="390" width="288" height="56"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="uhI-MZ-rTe">
+                                        <rect key="frame" x="0.0" y="381" width="320" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2qs-e3-cBL">
+                                        <rect key="frame" x="20" y="394" width="278" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="pressSignInButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="CNP-Zg-suv"/>
+                                            <action selector="signInButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="N2K-s5-ohJ"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="uhI-MZ-rTe">
-                                        <rect key="frame" x="0.0" y="381" width="320" height="104"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
@@ -130,18 +130,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="InU-FW-7UZ">
-                                <rect key="frame" x="0.0" y="20" width="46" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressBackButton:" destination="h7V-QL-Fof" eventType="touchUpInside" id="Yo5-oq-GNp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="exE-7V-oGa" appends="YES" id="anX-vx-PBN"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fni-SZ-uub"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -151,12 +145,18 @@
                         <outlet property="emailTextField" destination="XQf-Jg-DMd" id="PtY-QR-sCC"/>
                         <outlet property="passwordTextField" destination="TqC-ob-1oV" id="XhX-bP-AFd"/>
                         <outlet property="scrollView" destination="oo9-cX-qPd" id="7lO-c6-w3y"/>
-                        <segue destination="gXr-09-zlv" kind="modal" identifier="signInSegue" id="VbP-D8-ess"/>
+                        <outlet property="signInButtonView" destination="uhI-MZ-rTe" id="cBn-nu-qU9"/>
+                        <segue destination="gXr-09-zlv" kind="modal" identifier="signInSegue" id="ezQ-hN-8Cm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN8-hl-DUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="exE-7V-oGa">
+                    <connections>
+                        <action selector="onTap:" destination="h7V-QL-Fof" id="0Wf-6n-8RM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1091" y="359"/>
+            <point key="canvasLocation" x="1138" y="359"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="op3-Rd-1nP">
@@ -208,6 +208,10 @@
                                     <action selector="onBackUpButton:" destination="gXr-09-zlv" eventType="touchUpInside" id="04s-BR-AMw"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="dOm-cV-M28">
+                                <rect key="frame" x="248" y="448" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -215,6 +219,7 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="backupButtonImageView" destination="GZv-We-Ic6" id="dTT-f6-aMm"/>
+                        <outlet property="backupSwitch" destination="dOm-cV-M28" id="hqb-gQ-2tl"/>
                         <outlet property="pageControl" destination="ohD-kJ-OPw" id="22K-my-kzm"/>
                         <outlet property="scrollView" destination="awE-mS-g39" id="FWl-oH-6gr"/>
                     </connections>

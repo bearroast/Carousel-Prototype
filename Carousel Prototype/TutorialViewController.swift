@@ -12,6 +12,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var backupButtonImageView: UIImageView!
+    @IBOutlet weak var backupSwitch: UISwitch!
     @IBAction func onBackUpButton(sender: UIButton) {
         
     }
@@ -27,35 +28,24 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         
         // Set the backup button to only be visible on the last page
         if page == 3 {
-            
-            backupButtonImageView.alpha = 1
+            UIView.animateWithDuration(0.3) {
+                self.backupButtonImageView.alpha = 1
+                self.backupSwitch.alpha = 1
+            }
         }
         else {
-            backupButtonImageView.alpha = 0
+            UIView.animateWithDuration(0.3) {
+                self.backupButtonImageView.alpha = 0
+                self.backupSwitch.alpha = 0
+            }
         }
     }
-
-//    func scrollViewDidScroll(scrollView: UIScrollView!) {
-//        // This method is called as the user scrolls
-//    }
-//    
-//    func scrollViewWillBeginDragging(scrollView: UIScrollView!) {
-//        
-//    }
-//    
-//    func scrollViewDidEndDragging(scrollView: UIScrollView!,
-//        willDecelerate decelerate: Bool) {
-//            // This method is called right as the user lifts their finger
-//    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.contentSize = CGSize(width: 1280, height: 568)
         scrollView.delegate = self
-        
-
 
     }
 

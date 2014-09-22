@@ -8,68 +8,84 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UIAlertViewDelegate {
+class SignInViewController: UIViewController {
 
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBAction func pressBackButton(sender: UIButton) {
-        navigationController!.popViewControllerAnimated(true)
+    @IBOutlet weak var signInButtonView: UIImageView!
+
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
-    @IBAction func pressSignInButton(sender: UIButton) {
+    // navigationController!.popViewControllerAnimated(true)
+    
+    
+
+    @IBAction func signInButton(sender: UIButton) {
+        var alertView = UIAlertView(title: "Signing in…", message: nil, delegate: nil, cancelButtonTitle:  nil)
+        alertView.show()
         
-        if emailTextField.text == "hi@bjornrostad.no" && passwordTextField.text == "login" {
-            self.performSegueWithIdentifier("signInSegue", sender: self)
+        
+        delay(2, closure: { () -> () in
             
-        } else if emailTextField.text == "" || passwordTextField.text == "" {
-            var alertView = UIAlertView(title: "Email Required", message: "Please enter your email address", delegate: self, cancelButtonTitle: "OK")
-            alertView.show()
-            
-            // after press ok, set cursor to the email or password field
-        }
-        else {
-            var alertView = UIAlertView(title: "Incorrect", message: "Please enter correct email and password", delegate: self, cancelButtonTitle: "OK")
-            alertView.show()
-        }
-    }
-    
-    func keyboardWillShow(notification:NSNotification!) {
+            // Great success
+            if self.emailTextField.text == "hi" && self.passwordTextField.text == "login" {
+                
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                
+                self.performSegueWithIdentifier("signInSegue", sender: self)
+                
+            // Failure
+            } else if self.emailTextField.text == "" {
+                UIAlertView(title: "Email Required",
+                    message: "Please enter your email address",
+                    delegate: self,
+                    cancelButtonTitle: "OK").show()
+                
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                
+            } else if self.passwordTextField.text == "" {
+                UIAlertView(title: "Password Required",
+                    message: "Please enter your password",
+                    delegate: self,
+                    cancelButtonTitle: "OK").show()
+                
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+            }
+                
+            else {
+                UIAlertView(title: "Incorrect",
+                    message: "Please enter correct email and password",
+                    delegate: self,
+                    cancelButtonTitle: "OK").show()
+                
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+            }
+
+        })
         
-        self.scrollView.contentOffset.y = 130
-        
     }
     
-    func keyBoardWillHide(notification:NSNotification!) {
-        self.scrollView.contentOffset.y = 0
-    }
     
-//    func keyboardWillHide(notification:NSNotification!) {
-//        var userInfo = notification.userInfo!
-//        
-//        // Get the keyboard height and width from the notification
-//        // Size varies depending on OS, language, orientation
-//        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
-//        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
-//        var animationDuration = durationValue.doubleValue
-//        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
-//        var animationCurve = curveValue.integerValue
-//        
-//        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
-//
-//            self.scrollView.contentOffset.y = 140
-//            
-//            
-//            }, completion: nil)
-//        
-//    }
+    // Simulating network delay
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
+
         
         
     }
@@ -78,5 +94,6 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
+
     
 }
