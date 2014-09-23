@@ -23,8 +23,8 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     var introTiles : [UIImageView]!
     
     // Values for position, scale and rotation for the 6 images
-    var yOffsets : [Float] = [-295, -340, -315, -488, -410, -280]
-    var xOffsets : [Float] = [-50, 75, -66, 10, 100, -15]
+    var yOffsets : [Float] = [-295, -340, -315, -488, -410, -490]
+    var xOffsets : [Float] = [-50, 75, -66, 10, 100, -25]
     var scales : [Float] = [1, 1.65, 1.7, 1.6, 1.65, 1.65]
     var rotations : [Float] = [-10, -10, 10, 10, 10, -10]
     
