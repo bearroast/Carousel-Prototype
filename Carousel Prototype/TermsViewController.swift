@@ -16,7 +16,7 @@ class TermsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
-        var url = NSURL(string:"https://dropbox.com/terms");
+        var url = NSURL(string:"https://www.dropbox.com/terms?mobile=1");
         var req = NSURLRequest(URL:url);
         webView.loadRequest(req);
         super.viewDidLoad()
