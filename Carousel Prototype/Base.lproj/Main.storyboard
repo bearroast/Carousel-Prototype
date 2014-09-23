@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ntH-YS-UqI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="EOK-98-PV6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -264,6 +264,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="538"/>
                     <connections>
+                        <outlet property="agreeTermsButton" destination="rQR-E0-gNl" id="Eyl-pj-Jhm"/>
                         <outlet property="createButtonView" destination="VOR-Qx-yoG" id="8J7-3H-5pU"/>
                         <outlet property="emailTextField" destination="XrV-OW-eXt" id="hJ2-oc-wdx"/>
                         <outlet property="firstnameTextField" destination="VSd-XJ-lPy" id="tFO-m7-u0V"/>

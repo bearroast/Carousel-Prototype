@@ -16,9 +16,11 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var agreeTermsButton: UIButton!
     
     @IBAction func onAgreeTermsToggle(sender: UIButton) {
         sender.selected = !sender.selected
+        println("tapped onAgreeTermsToggle")
     }
     
     @IBAction func onBackButton(sender: UIButton) {
@@ -32,29 +34,35 @@ class CreateAccountViewController: UIViewController {
         
         delay(2, closure: { () -> () in
             
+            
             // Great success
-            if self.firstnameTextField.text != "" || self.lastnameTextField.text != "" || self.emailTextField.text != "" || self.passwordTextField.text != "" {
-                
-                self.firstnameTextField.text = ""
-                self.lastnameTextField.text = ""
-                self.emailTextField.text = ""
-                self.passwordTextField.text = ""
+            if self.firstnameTextField.text != "" && self.lastnameTextField.text != "" && self.emailTextField.text != "" && self.passwordTextField.text != "" {
                 
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
                 self.performSegueWithIdentifier("createAccountSegue", sender: self)
             }
+            
+            // Missing fields in the form
+            else if self.firstnameTextField.text == "" || self.lastnameTextField.text == "" || self.emailTextField.text == "" || self.passwordTextField.text == "" {
+                UIAlertView(title: "Oops",
+                    message: "Please fill out all fields",
+                    delegate: self,
+                    cancelButtonTitle: "OK").show()
                 
-                // Failure
-                else {
-                    UIAlertView(title: "Oops",
-                        message: "Please fill out all fields",
-                        delegate: self,
-                        cancelButtonTitle: "OK").show()
-                    
-                    alertView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+            }
+            // Agree to terms
+            else if self.agreeTermsButton.selected == false {
+                UIAlertView(title: "Please agree to the terms",
+                    message: "You have to agree to the terms to sign up for a Carousel account",
+                    delegate: self,
+                    cancelButtonTitle: "OK").show()
+                
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                println("running agreeTermsButton conditional")
                 }
-                
+            
             })
 
     }

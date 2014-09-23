@@ -8,18 +8,26 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIActionSheetDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var settingsImageView: UIImageView!
     @IBAction func onPressClose(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
    
     @IBAction func onPressSignOut(sender: UIButton) {
-        self.performSegueWithIdentifier("signOutSegue", sender: self)
+        var actionSheet = UIActionSheet(title: "Are you sure you want to sign out?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Sign Out")
+        actionSheet.showInView(view)
     }
     
+    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int){
+        if (buttonIndex == 0){
+            println("clicked 0")
+            self.performSegueWithIdentifier("signOutSegue", sender: self)
+        }
+    }
     
     
     override func viewDidLoad() {
