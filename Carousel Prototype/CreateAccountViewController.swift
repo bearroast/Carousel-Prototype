@@ -82,7 +82,7 @@ class CreateAccountViewController: UIViewController {
         UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
             
             // Position when keyboard is active
-            self.scrollView.contentOffset.y = 80
+            self.scrollView.contentOffset.y = 90
             self.createButtonView.center.y = 405
             }, completion: nil)
     }
