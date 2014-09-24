@@ -43,27 +43,41 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         // Setting the size of the scrollview
         scrollView.contentSize = introImageView.image!.size
         scrollView.delegate = self
+        
+        
+        // Making sure the images are loaded
+        var images = introTiles.count
+        var image = 0
+        for image in 0..<images {
+            introTiles[image].transform = CGAffineTransformMakeTranslation(CGFloat(xOffsets[image]), CGFloat(yOffsets[image]))
+            introTiles[image].transform = CGAffineTransformScale(introTiles[image].transform, CGFloat(scales[image]), CGFloat(scales[image]))
+            introTiles[image].transform = CGAffineTransformRotate(introTiles[image].transform, CGFloat(Double(rotations[image]) * M_PI / 180))
+        }
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView!) {
-        
+    
         // Scroll position
         var offset = Float(scrollView.contentOffset.y)
         
-        // Finding the number of images and start count at 0
-        let images = introTiles.count
-        var image = 0
-        
-        // Loop through each image
-        for image in 0..<images {
-            var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[image], r2Max: 0)
-            var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[image], r2Max: 0)
-            var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[image], r2Max: 1)
-            var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[image], r2Max: 0)
+        if offset > 0 && offset < 568 {
             
-            introTiles[image].transform = CGAffineTransformMakeTranslation(CGFloat(tx), CGFloat(ty))
-            introTiles[image].transform = CGAffineTransformScale(introTiles[image].transform, CGFloat(scale), CGFloat(scale))
-            introTiles[image].transform = CGAffineTransformRotate(introTiles[image].transform, CGFloat(Double(rotation) * M_PI / 180))
+            // Finding the number of images and start count at 0
+            var images = introTiles.count
+            var image = 0
+        
+        
+            // Loop through each image to update the scale, position and rotation
+            for image in 0..<images {
+                var tx = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: xOffsets[image], r2Max: 0)
+                var ty = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: yOffsets[image], r2Max: 0)
+                var scale = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: scales[image], r2Max: 1)
+                var rotation = convertValue(offset, r1Min: 0, r1Max: 568, r2Min: rotations[image], r2Max: 0)
+                
+                introTiles[image].transform = CGAffineTransformMakeTranslation(CGFloat(tx), CGFloat(ty))
+                introTiles[image].transform = CGAffineTransformScale(introTiles[image].transform, CGFloat(scale), CGFloat(scale))
+                introTiles[image].transform = CGAffineTransformRotate(introTiles[image].transform, CGFloat(Double(rotation) * M_PI / 180))
+            }
         }
     }
     
