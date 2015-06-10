@@ -55,7 +55,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
-    func scrollViewDidScroll(scrollView: UIScrollView!) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
     
         // Scroll position
         var offset = Float(scrollView.contentOffset.y)
